@@ -16,6 +16,6 @@ void moveVectorY(VectorPoint *point) {
     if (point->isFalling) {
         a-=10;
     }
-    point->y = max(y+v, 0);
+    point->y = min(y-v, 143);
     point->vvelocity = v + a;
 }
