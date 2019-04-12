@@ -1,10 +1,13 @@
 #include "logic.h"
 
 void initializeAppState(AppState* appState) {
-    // TA-TODO: Initialize everything that's part of this AppState struct here.
-    // Suppose the struct contains random values, make sure everything gets
-    // the value it should have when the app begins.
-    UNUSED(appState);
+    appState->player.point.x = 120;
+    appState->player.point.y = 143;
+    appState->player.point.isFalling = 0;
+    appState->player.point.hvelocity = 0;
+    appState->player.point.vvelocity = 0;
+    appState->player.point.vaccel = 0;
+    appState->player.point.haccel = 0;
 }
 
 // TA-TODO: Add any process functions for sub-elements of your app here.
