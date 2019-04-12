@@ -3,7 +3,9 @@
 
 #include "gba.h"
 #include "physics.h"
-
+typedef struct {
+    VectorPoint point;
+} Player;
 typedef struct {
     // Store whether or not the game is over in this member:
     int gameOver;
