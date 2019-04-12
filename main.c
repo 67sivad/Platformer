@@ -52,7 +52,9 @@ int main(void) {
             case START_NODRAW:
                 // TA-TODO: Check for a button press here to start the app.
                 // Start the app by switching the state to APP_INIT.
-
+                if (KEY_JUST_PRESSED(BUTTON_A, currentButtons, previousButtons)) {
+                    state = APP_INIT;
+                }
                 break;
             case APP_INIT:
                 // Initialize the app. Switch to the APP state.
