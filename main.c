@@ -22,6 +22,7 @@ typedef enum {
 
 int main(void) {
     // TA-TODO: Manipulate REG_DISPCNT here to set Mode 3.
+    REG_DISPCNT = 0x403; //| OBJ_ENABLE | SPRITES_DIMENSION_TYPE;
 
     GBAState state = START;
 
@@ -42,6 +43,8 @@ int main(void) {
                 // Wait for VBlank
                 waitForVBlank();
 
+                fillScreenDMA(GREEN);
+                drawString(90, 60, "Grapple Bois", BLACK);
                 // TA-TODO: Draw the start state here.
 
                 state = START_NODRAW;
