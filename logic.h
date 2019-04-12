@@ -2,11 +2,12 @@
 #define LOGIC_H
 
 #include "gba.h"
+#include "physics.h"
 
 typedef struct {
     // Store whether or not the game is over in this member:
     int gameOver;
-
+    Player player;
     /*
     * TA-TODO: Add any logical elements you need to keep track of in your app.
     *
