@@ -1,9 +1,10 @@
 #include "gba.h"
+#include "images/sprites.h"
 
 volatile unsigned short *videoBuffer = (volatile unsigned short *) 0x6000000;
 u32 vBlankCounter = 0;
 volatile OamEntry shadow[128];
-volatile OamEntry* playerFrog = &shadow[0];
+volatile OamEntry* player = &shadow[0];
 
 void waitForVBlank(void) {
     while(*SCANLINECOUNTER > 160);
@@ -58,7 +59,7 @@ void DMAHelper(void *source, void *dest, u16 count, int mode) {
     }
 }
 
-/** void spriteSetUp(void) {
+void spriteSetUp(void) {
     //load palette
     DMA[3].src = (void *) sprites_palette;
     DMA[3].dst = SPRITEPAL;
@@ -74,15 +75,15 @@ void DMAHelper(void *source, void *dest, u16 count, int mode) {
        shadow[i].attr0 = ATTR0_HIDE;
     }
 
-    playerFrog = &shadow[0];
-    playerFrog->attr2 = FROG_PALETTE_ID| FROG_ID;
+    player = &shadow[0];
+    player->attr2 = GRAPPLEBOI_PALETTE_ID| GRAPPLEBOI_ID;
 
 
-}
+} 
 
 void drawSprite(int x, int y) {
-    playerFrog->attr0 = (y) | SPRITES_PALETTE_TYPE | FROG_SPRITE_SHAPE;
-    playerFrog ->attr1 = (x) | FROG_SPRITE_SIZE;
+    player->attr0 = (y) | SPRITES_PALETTE_TYPE | GRAPPLEBOI_ID;
+    player ->attr1 = (x) | GRAPPLEBOI_SPRITE_SIZE;
 
     DMA[3].src = shadow;
     DMA[3].dst = OAMMEM;
@@ -90,12 +91,12 @@ void drawSprite(int x, int y) {
 }
 
 void hideSprite(void) {
-    playerFrog->attr0 = ATTR0_HIDE;
+    player->attr0 = ATTR0_HIDE;
 
     DMA[3].src = shadow;
     DMA[3].dst = OAMMEM;
     DMA[3].cnt = 128*4 | DMA_ON;
-} */
+}
 
 void drawChar(int col, int row, char ch, u16 color) {
     for(int r = 0; r<8; r++) {
