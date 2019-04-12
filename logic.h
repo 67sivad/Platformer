@@ -36,9 +36,7 @@ typedef struct {
 * } Snake;
 *
 */
-typedef struct {
-    VectorPoint point;
-} Player;
+
 
 // This function can initialize an unused AppState struct.
 void initializeAppState(AppState *appState);
