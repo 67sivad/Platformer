@@ -8,9 +8,10 @@ typedef struct {
     int y;
 } VectorPoint;
 
-#define GRAVITY 10
+#define GRAVITY 5
 
 #define MAX_RUN_SPEED 10
 
 void moveVectorY(VectorPoint *point);
 void moveVectorX(VectorPoint *point);
+void jump(Player *player);
