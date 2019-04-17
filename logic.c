@@ -47,10 +47,9 @@ AppState processAppState(AppState *currentAppState, u32 keysPressedBefore, u32 k
 
     AppState nextAppState = *currentAppState;
 
-    // if (KEY_JUST_PRESSED(BUTTON_A, keysPressedNow, keysPressedBefore)) {
-    //     jump(&(nextAppState.player));
-    // }
-    UNUSED(keysPressedNow);
-    UNUSED(keysPressedBefore);
+    if (KEY_JUST_PRESSED(BUTTON_A, keysPressedNow, keysPressedBefore)) {
+        jump(&(nextAppState.player));
+    }
+    moveVectorY(&nextAppState.player.point);
     return nextAppState;
 }
