@@ -50,6 +50,18 @@ AppState processAppState(AppState *currentAppState, u32 keysPressedBefore, u32 k
     if (KEY_JUST_PRESSED(BUTTON_A, keysPressedNow, keysPressedBefore)) {
         jump(&(nextAppState.player));
     }
+    if (KEY_DOWN(BUTTON_RIGHT, keysPressedNow)) {
+        nextAppState.player.point.haccel = 10;
+    } else if (KEY_DOWN(BUTTON_LEFT, keysPressedNow)) {
+        nextAppState.player.point.haccel = -10;
+    } else if (nextAppState.player.point.hvelocity > 0){
+        nextAppState.player.point.haccel = -10;
+    } else if (nextAppState.player.point.hvelocity < 0) {
+        nextAppState.player.point.haccel = 10;
+    } else {
+        nextAppState.player.point.haccel = 0;
+    }
     moveVectorY(&nextAppState.player.point);
+    moveVectorX(&nextAppState.player.point);
     return nextAppState;
 }

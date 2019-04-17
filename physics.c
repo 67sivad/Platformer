@@ -14,7 +14,7 @@ void moveVectorY(VectorPoint *point) {
     int v = point->vvelocity;
     int y = point->y;
     if (point->isFalling) {
-        a-=10;
+        a-=GRAVITY;
     }
     point->y = min(y-v, 143);
     if (point->y == 143) {

@@ -25,6 +25,7 @@ void fullDrawAppState(AppState *state) {
 // move in a frame. E.g. in a Snake game, erase the Snake, the food & the score.
 void undrawAppState(AppState *state) {
     // TA-TODO: IMPLEMENT.
+    drawRectDMA(12, 8, 100, 30, WHITE);
     UNUSED(state);
 }
 
