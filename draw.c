@@ -17,7 +17,8 @@
 // including the background and whatnot.
 void fullDrawAppState(AppState *state) {
     // TA-TODO: IMPLEMENT.
-    UNUSED(state);
+    fillScreenDMA(WHITE);
+    drawSprite(state->player.point.x, state->player.point.y);
 }
 
 // This function will be used to undraw (i.e. erase) things that might
@@ -31,5 +32,5 @@ void undrawAppState(AppState *state) {
 // For example, in a Snake game, draw the snake, the food, the score.
 void drawAppState(AppState *state) {
     // TA-TODO: IMPLEMENT.
-    UNUSED(state);
+    drawSprite(state->player.point.x, state->player.point.y);
 }
