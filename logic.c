@@ -51,13 +51,13 @@ AppState processAppState(AppState *currentAppState, u32 keysPressedBefore, u32 k
         jump(&(nextAppState.player));
     }
     if (KEY_DOWN(BUTTON_RIGHT, keysPressedNow)) {
-        nextAppState.player.point.haccel = 10;
+        nextAppState.player.point.haccel = 5;
     } else if (KEY_DOWN(BUTTON_LEFT, keysPressedNow)) {
-        nextAppState.player.point.haccel = -10;
+        nextAppState.player.point.haccel = -5;
     } else if (nextAppState.player.point.hvelocity > 0){
-        nextAppState.player.point.haccel = -10;
+        nextAppState.player.point.haccel = -5;
     } else if (nextAppState.player.point.hvelocity < 0) {
-        nextAppState.player.point.haccel = 10;
+        nextAppState.player.point.haccel = 5;
     } else {
         nextAppState.player.point.haccel = 0;
     }

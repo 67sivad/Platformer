@@ -5,8 +5,18 @@ void moveVectorX(VectorPoint *point) {
     int a = point->haccel;
     int v = point->hvelocity;
     int x = point->x;
-    point->x = x + v;
-    point->hvelocity = min(v + a, MAX_RUN_SPEED);
+    if (x >= 231 && a > 0) {
+        point->x = 231;
+    } else if (x <= 1 && a < 0) {
+        point->x = 1;
+    } else {
+        point->x = x + v;
+    }
+    if (v+a > 0) {
+        point->hvelocity = min(v+a, MAX_RUN_SPEED);
+    } else {
+        point->hvelocity = max(v+a, -MAX_RUN_SPEED);
+    }
 }
 
 void moveVectorY(VectorPoint *point) {

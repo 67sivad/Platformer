@@ -4,7 +4,7 @@
 
 #define GRAVITY 1
 
-#define MAX_RUN_SPEED 10
+#define MAX_RUN_SPEED 5
 
 
 
