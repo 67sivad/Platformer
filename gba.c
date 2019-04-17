@@ -82,7 +82,7 @@ void spriteSetUp(void) {
 } 
 
 void drawSprite(int x, int y) {
-    player->attr0 = (y) | SPRITES_PALETTE_TYPE | GRAPPLEBOI_ID;
+    player->attr0 = (y) | SPRITES_PALETTE_TYPE | SPRITES_PALETTE_TYPE | GRAPPLEBOI_SPRITE_SHAPE;
     player ->attr1 = (x) | GRAPPLEBOI_SPRITE_SIZE;
 
     DMA[3].src = shadow;

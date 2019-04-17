@@ -48,6 +48,7 @@ int main(void) {
 
                 fillScreenDMA(GREEN);
                 drawString(90, 60, "Grapple Bois", BLACK);
+                drawSprite(50, 50);
                 // TA-TODO: Draw the start state here.
 
                 state = START_NODRAW;
