@@ -19,3 +19,8 @@ void moveVectorY(VectorPoint *point) {
     point->y = min(y-v, 143);
     point->vvelocity = v + a;
 }
+
+void jump(Player *player) {
+    player->point.vvelocity = 20;
+    player->point.isFalling = 1;
+}
