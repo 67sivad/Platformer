@@ -21,6 +21,6 @@ void moveVectorY(VectorPoint *point) {
 }
 
 void jump(Player *player) {
-    player->point.vvelocity = 20;
+    player->point.vvelocity = 15;
     player->point.isFalling = 1;
 }
