@@ -1,4 +1,5 @@
 #include "logic.h"
+#include "physics.h"
 
 void initializeAppState(AppState* appState) {
     appState->player.point.x = 120;
@@ -46,8 +47,10 @@ AppState processAppState(AppState *currentAppState, u32 keysPressedBefore, u32 k
 
     AppState nextAppState = *currentAppState;
 
-    if (KEY_JUST_PRESSED(BUTTON_A, keysPressedNow, keysPressedBefore)) {
-        jump(nextAppState.player);
-    }
+    // if (KEY_JUST_PRESSED(BUTTON_A, keysPressedNow, keysPressedBefore)) {
+    //     jump(&(nextAppState.player));
+    // }
+    UNUSED(keysPressedNow);
+    UNUSED(keysPressedBefore);
     return nextAppState;
 }

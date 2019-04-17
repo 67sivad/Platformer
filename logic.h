@@ -2,10 +2,21 @@
 #define LOGIC_H
 
 #include "gba.h"
-#include "physics.h"
+
+typedef struct {
+    int hvelocity;
+    int vvelocity;
+    int isFalling;
+    int haccel;
+    int vaccel;
+    int x;
+    int y;
+} VectorPoint;
+
 typedef struct {
     VectorPoint point;
 } Player;
+
 typedef struct {
     // Store whether or not the game is over in this member:
     int gameOver;
