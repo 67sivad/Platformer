@@ -6,7 +6,7 @@ void moveVectorX(VectorPoint *point) {
     int v = point->hvelocity;
     int x = point->x;
     point->x = x + v;
-    point->hvelocity = v + a;
+    point->hvelocity = min(v + a, MAX_RUN_SPEED);
 }
 
 void moveVectorY(VectorPoint *point) {
@@ -16,6 +16,6 @@ void moveVectorY(VectorPoint *point) {
     if (point->isFalling) {
         a-=10;
     }
-    point->y = max(y+v, 0);
+    point->y = min(y-v, 143);
     point->vvelocity = v + a;
 }
