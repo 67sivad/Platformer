@@ -12,6 +12,8 @@ typedef struct {
 
 #define MAX_RUN_SPEED 10
 
+#include "logic.h"
+
 void moveVectorY(VectorPoint *point);
 void moveVectorX(VectorPoint *point);
 void jump(Player *player);
